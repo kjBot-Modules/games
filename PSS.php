@@ -68,16 +68,17 @@ class PSS extends Module{
 
     private static function ParsePSS(string $str): int{
         switch($str){
-            case '石头':
+            case '石头': case '拳头':
             case 'stone':
-            case '拳头':
+            case '✊': case '👊': case '🤛': case '🤜':
                 return PSS::Stone;
-            case '布':
+            case '布': case '纸':
             case 'paper':
-            case '纸':
+            case '🖐️': case '👋': case '🤚': case '✋':
                 return PSS::Paper;
             case '剪刀':
             case 'scissor':
+            case '✌️': case '✂️':
                 return PSS::Scissor;
         }
         return PSS::Error;
