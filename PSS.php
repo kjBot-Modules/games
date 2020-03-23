@@ -16,7 +16,7 @@ class PSS extends Module{
     const BaseDir = 'games.PSS/';
 
     public function process(array $args, MessageEvent $event){
-        $bot = rand(0, 2);
+        $bot = random_int(0, 2);
         $user = PSS::ParsePSS($args[1]??q('你还没出手呢'));
         if($user === PSS::Error)q('无法理解你的手法');
         $result = PSS::Judge($user, $bot);
